@@ -32,10 +32,12 @@ namespace Textures_and_Colours
         {
             // TODO: Add your initialization logic here
             Random generator = new Random();
-            xValue = generator.Next(801);
-            yValue = generator.Next(501);
+            
             background = generator.Next(2);
             base.Initialize();
+            xValue = generator.Next(_graphics.PreferredBackBufferWidth - astronautTexture.Width);
+            yValue = generator.Next(_graphics.PreferredBackBufferHeight - astronautTexture.Height);
+
         }
 
         protected override void LoadContent()
